@@ -1,34 +1,6 @@
 require 'rubybuzz'
 
 describe Rubybuzz do
-  context 'knows when a number is' do
-    it 'divisible by 3' do
-      expect(subject.fizz?(3)).to be true
-    end
-
-    it 'divisible by 5' do
-      expect(subject.buzz?(5)).to be true
-    end
-
-    it 'divisible by both 5 and 3' do
-      expect(subject.both?(15)).to be true
-    end
-  end
-
-  context 'knows when a number not' do
-    it 'divisible by 3' do
-      expect(subject.fizz?(7)).to be false
-    end
-
-    it 'divisible by 5' do
-      expect(subject.buzz?(9)).to be false
-    end
-
-    it 'divisible by both 5 and 3' do
-      expect(subject.both?(5)).to be false
-    end
-  end
-
   context 'it can say the words' do
     it '"Fizz" when divisible by 3' do
       expect(subject.say(3)).to eq('Fizz')

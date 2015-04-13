@@ -1,24 +1,16 @@
 # rubocop
 class Rubybuzz
-  def fizz?(number)
-    div_by(number, 3)
-  end
-
-  def buzz?(number)
-    div_by(number, 5)
-  end
-
   def both?(number)
-    fizz?(number) && buzz?(number)
+    div_by(number, 3) && div_by(number, 5)
   end
 
   def none?(number)
-    both?(number) || buzz?(number) || fizz?(number)
+    both?(number) || div_by(number, 3) || div_by(number, 5)
   end
 
   def say(number)
-    item = 'Fizz' if fizz?(number)
-    item = 'Buzz' if buzz?(number)
+    item = 'Fizz' if div_by(number, 3)
+    item = 'Buzz' if div_by(number, 5)
     item = 'FizzBuzz' if both?(number)
     item = number unless none?(number)
     item
