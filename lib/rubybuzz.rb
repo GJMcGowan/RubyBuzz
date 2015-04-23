@@ -1,21 +1,11 @@
-# Simple fizzbuzz
-class Rubybuzz
-  def say(number)
-    return 'FizzBuzz' if div_by(number, 3) && div_by(number, 5)
-    return 'Fizz' if div_by(number, 3)
-    return 'Buzz' if div_by(number, 5)
-    number
+def loop(max)
+  array = []
+  (1..max).each do |number|
+    word = ''
+    word += 'Fizz' if number % 3 == 0
+    word += 'Buzz' if number % 5 == 0
+    result = word.empty? ? number : word
+    array << result
   end
-
-  def play(max)
-    list = []
-    1.upto(max) { |item| list << say(item) }
-    list
-  end
-
-  private
-
-  def div_by(number, divisor)
-    number % divisor == 0
-  end
+  array
 end
